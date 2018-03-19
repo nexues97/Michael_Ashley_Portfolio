@@ -55,7 +55,7 @@ $(function() {
     }
     
     var messageText = $(".message").val().length;
-    if (messageText > 25) {
+    if (messageText > 10) {
       $(".message").css({
         "color" : "#609D29"
       });
@@ -183,3 +183,17 @@ function loaded() {
   form.addEventListener("submit", handleFormSubmit, false);
 };
 document.addEventListener("DOMContentLoaded", loaded, false);
+
+// Menu button actions
+
+$(document).on('click','.icon',function() {
+  $('.overlay').css('height', '100%');
+  $('.icon').css('display', 'none');
+})
+
+$(document).on('click','.close',function() {
+  
+  $('.overlay').css('height', '0%');
+  $('.icon').fadeIn(800).css('display', 'block');
+
+})
